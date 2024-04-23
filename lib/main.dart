@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app_fl/app_routes.dart';
 import 'package:to_do_app_fl/screens/home.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Todo App',
-      home: Home(),
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.pages,
     );
   }
 }
