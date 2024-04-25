@@ -36,202 +36,212 @@ class _RegisterSceenState extends State<RegisterSceen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Center(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: double.infinity,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: BackdropFilter(
-                                  filter:
-                                      ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Column(
-                                      children: [
-                                        const Text(
-                                          "Create An Account",
-                                          style: TextStyle(
-                                            fontSize: 32,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        TextField(
-                                          controller: fullnameController,
-                                          decoration: InputDecoration(
-                                            hintText: "fullname",
-                                            labelText: "Enter Your Name",
-                                            labelStyle: TextStyle(
-                                              fontSize: 20,
+        child: Container(
+          color: Colors.blueGrey,
+          child: Column(
+            children: [
+              Expanded(
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Center(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: BackdropFilter(
+                                    filter:
+                                        ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Column(
+                                        children: [
+                                          const Text(
+                                            "Create An Account",
+                                            style: TextStyle(
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black,
                                             ),
-                                            border: const UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.white,
+                                          ),
+                                          const SizedBox(
+                                            height: 16,
+                                          ),
+                                          TextField(
+                                            controller: fullnameController,
+                                            decoration: InputDecoration(
+                                              hintText: "fullname",
+                                              labelText: "Enter Your Name",
+                                              labelStyle: TextStyle(
+                                                fontSize: 20,
                                               ),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        TextField(
-                                          controller: emailController,
-                                          keyboardType:
-                                              TextInputType.emailAddress,
-                                          decoration: InputDecoration(
-                                            hintText: "email",
-                                            labelText: "Enter Your Email",
-                                            labelStyle: TextStyle(
-                                              fontSize: 20,
-                                            ),
-                                            border: const UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        TextField(
-                                          controller: phoneController,
-                                          keyboardType: TextInputType.phone,
-                                          decoration: InputDecoration(
-                                            hintText: "phone",
-                                            labelText: "Enter Phone Number",
-                                            labelStyle: TextStyle(
-                                              fontSize: 20,
-                                            ),
-                                            border: const UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        TextField(
-                                          controller: passwordController,
-                                          obscureText: showPass ? false : true,
-                                          decoration: InputDecoration(
-                                            hintText: "password",
-                                            labelText: "Enter Password",
-                                            labelStyle: TextStyle(
-                                              fontSize: 20,
-                                            ),
-                                            border: const UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                            suffixIcon: IconButton(
-                                              onPressed: () {
-                                                setState(() {
-                                                  showPass = !showPass;
-                                                });
-                                              },
-                                              icon: Icon(showPass
-                                                  ? Icons.visibility_off
-                                                  : Icons.visibility),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        isLoading
-                                            ? Center(
-                                                child: Column(
-                                                  children: [
-                                                    LoadingAnimationWidget
-                                                        .newtonCradle(
-                                                            color: Colors.black,
-                                                            size: 50),
-                                                    const Text("Please Wait")
-                                                  ],
+                                              border:
+                                                  const UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Colors.white,
                                                 ),
-                                              )
-                                            : ElevatedButton(
-                                                style: ButtonStyle(
-                                                  backgroundColor:
-                                                      MaterialStateProperty
-                                                          .all<Color>(Colors
-                                                              .transparent), // Set your desired background color
-                                                  minimumSize:
-                                                      MaterialStateProperty
-                                                          .all<Size>(Size(
-                                                              double.infinity,
-                                                              0)),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 16,
+                                          ),
+                                          TextField(
+                                            controller: emailController,
+                                            keyboardType:
+                                                TextInputType.emailAddress,
+                                            decoration: InputDecoration(
+                                              hintText: "email",
+                                              labelText: "Enter Your Email",
+                                              labelStyle: TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                              border:
+                                                  const UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Colors.white,
                                                 ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 16,
+                                          ),
+                                          TextField(
+                                            controller: phoneController,
+                                            keyboardType: TextInputType.phone,
+                                            decoration: InputDecoration(
+                                              hintText: "phone",
+                                              labelText: "Enter Phone Number",
+                                              labelStyle: TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                              border:
+                                                  const UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 16,
+                                          ),
+                                          TextField(
+                                            controller: passwordController,
+                                            obscureText:
+                                                showPass ? false : true,
+                                            decoration: InputDecoration(
+                                              hintText: "password",
+                                              labelText: "Enter Password",
+                                              labelStyle: TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                              border:
+                                                  const UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                              suffixIcon: IconButton(
                                                 onPressed: () {
-                                                  checkUserDetails();
+                                                  setState(() {
+                                                    showPass = !showPass;
+                                                  });
                                                 },
-                                                child: const Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                icon: Icon(showPass
+                                                    ? Icons.visibility_off
+                                                    : Icons.visibility),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 16,
+                                          ),
+                                          isLoading
+                                              ? Center(
+                                                  child: Column(
                                                     children: [
-                                                      Text(
-                                                        "Create Account",
-                                                        style: TextStyle(
-                                                          color: Colors.black,
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Icon(
-                                                        Icons.login,
-                                                        color: Colors.black,
-                                                      )
+                                                      LoadingAnimationWidget
+                                                          .newtonCradle(
+                                                              color:
+                                                                  Colors.black,
+                                                              size: 50),
+                                                      const Text("Please Wait")
                                                     ],
                                                   ),
+                                                )
+                                              : ElevatedButton(
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(Colors
+                                                                .transparent), // Set your desired background color
+                                                    minimumSize:
+                                                        MaterialStateProperty
+                                                            .all<Size>(Size(
+                                                                double.infinity,
+                                                                0)),
+                                                  ),
+                                                  onPressed: () {
+                                                    checkUserDetails();
+                                                  },
+                                                  child: const Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                          "Create Account",
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 5,
+                                                        ),
+                                                        Icon(
+                                                          Icons.login,
+                                                          color: Colors.black,
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
                                                 ),
-                                              ),
-                                        Align(
-                                          alignment: Alignment.topLeft,
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context)
-                                                  .pushReplacementNamed("/");
-                                            },
-                                            child: const Text(
-                                                "Already Have Account"),
+                                          Align(
+                                            alignment: Alignment.topLeft,
+                                            child: TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context)
+                                                    .pushReplacementNamed("/");
+                                              },
+                                              child: const Text(
+                                                  "Already Have Account"),
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  )),
-                            ),
-                          )
-                        ],
+                                        ],
+                                      ),
+                                    )),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

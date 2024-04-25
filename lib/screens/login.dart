@@ -42,6 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
         );
 
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       body: Column(
         children: [
           Expanded(
@@ -69,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Column(
                                 children: [
                                   const Text(
-                                    "Please Login",
+                                    "Kindly Login",
                                     style: TextStyle(
                                       fontSize: 32,
                                       fontWeight: FontWeight.bold,

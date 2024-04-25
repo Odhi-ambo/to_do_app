@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app_fl/app_routes.dart';
-import 'package:to_do_app_fl/screens/home.dart';
 
 void main() {
   runApp(const MyApp());

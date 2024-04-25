@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../model/todo.dart';
 import '../widgets/todo_item.dart';
 import '../constants/colors.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 bool isLoading = false;
 
